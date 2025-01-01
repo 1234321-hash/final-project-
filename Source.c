@@ -1,3 +1,4 @@
+
 static void add_record(GtkWidget* widget, gpointer data) {
     AppWidgets* widgets = (AppWidgets*)data;
 
@@ -6,7 +7,7 @@ static void add_record(GtkWidget* widget, gpointer data) {
 
     float amount = atof(amount_text);
     if (amount <= 0) {
-        g_print(u8"½Ð¿é¤J¦³®Äª÷ÃB¡C\n");
+        g_print(u8"è«‹è¼¸å…¥æœ‰æ•ˆé‡‘é¡ã€‚\n");
         return;
     }
 
@@ -18,7 +19,7 @@ static void add_record(GtkWidget* widget, gpointer data) {
 
     gint category_index = gtk_drop_down_get_selected(GTK_DROP_DOWN(widgets->combo_category));
     if (category_index < 0 || category_index >= category_count) {
-        g_print(u8"½Ð¿ï¾Ü¦³®ÄªºÃþ§O¡C\n");
+        g_print(u8"è«‹é¸æ“‡æœ‰æ•ˆçš„é¡žåˆ¥ã€‚\n");
         return;
     }
 
@@ -44,7 +45,8 @@ static void add_record(GtkWidget* widget, gpointer data) {
         4, total_amount,
         -1);
 
-    g_print(u8"°O¿ý¤w·s¼W¡G[%s] %s - $%.2f\n", new_record.date, new_record.category, new_record.amount);
+    g_print(u8"è¨˜éŒ„å·²æ–°å¢žï¼š[%s] %s - $%.2f\n", new_record.date, new_record.category, new_record.amount);
 
     update_total_label(widgets->tatol_w);
+
 }
